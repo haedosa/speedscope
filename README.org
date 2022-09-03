@@ -1,0 +1,15 @@
+#+title: Readme
+
+
+This is nothing but the [[https://github.com/jlfwong/speedscope][speedscope]] "nix-flaked" using [[https://github.com/nix-community/dream2nix][dream2nix]].
+
+Either build and run
+#+begin_src sh
+$ nix build .#speedscope
+$ result/bin/speedscope
+#+end_src
+
+or
+#+begin_src sh
+$ nix run .#speedscope
+#+end_src
