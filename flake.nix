@@ -26,5 +26,8 @@
     })
     // {
       checks = self.packages;
+      overlays = {
+        default = import ./overlay.nix self;
+      };
     };
 }
