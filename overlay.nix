@@ -1,13 +1,9 @@
 self: final: prev: with final; let
 
-  haskellPackages = prev.haskellPackages.override (old: {
-    overrides = lib.composeManyExtensions [
-      (old.overrides or (_: _: {}))
-      (hfinal: hprev: with haskell.lib; {
-        hs-speedscope = doJailbreak (markUnbroken hprev.hs-speedscope);
-      })
-    ];
-  });
+  haskellPackages = prev.haskellPackages.extend
+    (hfinal: hprev: with haskell.lib; {
+      hs-speedscope = doJailbreak (markUnbroken hprev.hs-speedscope);
+    });
 
 in
 {
